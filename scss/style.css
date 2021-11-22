@@ -1,0 +1,112 @@
+/*
+ * SMACSS + SCSS starter v2.1
+ * Inspired by SMACSS http://smacss.com
+ * Author: @jonathanpath
+ * Date: 4 August 2015
+ *
+ * https://github.com/jonathanpath/SASS-SMACSS
+ * See file structure in http://jonathanpath.com/sass+smacss/scss/style.scss
+ *
+ * Coding rules : https://github.com/necolas/idiomatic-css
+ *
+ */
+/* Site settings */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
+/* Vendor */
+/* Override */
+/* Base */
+@import url(_site-settings.scss);
+/* ===========================
+   Base
+   =========================== */
+/* reset */
+*,
+html,
+body,
+a,
+p {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "lato";
+}
+
+/* <--------------------------------------------------------> */
+/* Layouts */
+/* ==|====================
+   Layout/Constrained
+   ======================= */
+.l-constrained {
+  max-width: pxtoem(1140, 16);
+  padding: 0 pxtoem(20, 16);
+  margin: 0 auto;
+}
+
+/* Modules */
+/* ==|====================
+   Module/Box
+   ======================= */
+/***** header *****/
+header .header--logo {
+  content: url("https://api.iconify.design/ion/dice-outline.svg?width=50&height=50&color=blue");
+}
+
+header .dice__master--title {
+  color: blue;
+}
+
+header .Rules--p {
+  padding-top: 12px;
+  color: blue;
+}
+
+/***** End header *****/
+/***** main *****/
+/* Dice */
+.dice {
+  margin: 12rem auto 0;
+  width: var(--size);
+  height: var(--size);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotate(30deg) rotateZ(30deg);
+          transform: rotate(30deg) rotateZ(30deg);
+}
+
+.dice .cube_face {
+  position: absolute;
+  opacity: 0.8;
+  width: var(--size);
+  height: var(--size);
+}
+
+.dice .cube_face_front {
+  background: url("https://api.iconify.design/gg/dice-1.svg?color=black") no-repeat center center/contain;
+  -webkit-transform: translateZ(calc(var(--size_dice) / 2));
+          transform: translateZ(calc(var(--size_dice) / 2));
+}
+
+.dice .cube_face_back {
+  background: url("https://api.iconify.design/gg/dice-6.svg?color=black") no-repeat center center/contain;
+}
+
+.dice .cube_face_right {
+  background: url("https://api.iconify.design/gg/dice-3.svg?color=black") no-repeat center center/contain;
+}
+
+.dice .cube_face_left {
+  background: url("https://api.iconify.design/gg/dice-4.svg?color=black") no-repeat center center/contain;
+}
+
+.dice .cube_face_top {
+  background: url("https://api.iconify.design/gg/dice-5.svg?color=black") no-repeat center center/contain;
+}
+
+.dice .cube_face_bottom {
+  background: url("https://api.iconify.design/gg/dice-2.svg?color=black") no-repeat center center/contain;
+}
+
+/***** End main *****/
+/*# sourceMappingURL=style.css.map */

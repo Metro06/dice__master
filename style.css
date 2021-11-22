@@ -1,0 +1,70 @@
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* <--------------------------------------------------------> */
+
+/* root */
+
+
+:root {
+  --size_dice : 300px;
+  /* permet au dés d'être dynamique */
+}
+
+/* <--------------------------------------------------------> */
+
+/* Body */
+
+body {
+  background-color: brown;
+}
+
+/* <--------------------------------------------------------> */
+
+/* Dice */
+
+.dice {
+  margin: 12rem auto 0;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  transform: rotate(30deg) rotateZ(30deg);
+}
+
+.cube_face {
+  position: absolute;
+  opacity: 0.8;
+  width: var(--size);
+  height: var(--size);
+}
+
+
+.cube_face_front {
+  background: url('https://api.iconify.design/gg/dice-1.svg?color=black') no-repeat center center / contain;
+  transform: translateZ(calc(var(--size_dice) / 2 ));
+}
+
+.cube_face_back {
+  background: url('https://api.iconify.design/gg/dice-6.svg?color=black') no-repeat center center / contain;
+  transform: ;
+}
+
+.cube_face_right {
+  background: url('https://api.iconify.design/gg/dice-3.svg?color=black') no-repeat center center / contain;
+}
+
+.cube_face_left {
+  background: url('https://api.iconify.design/gg/dice-4.svg?color=black') no-repeat center center / contain;
+}
+
+.cube_face_top {
+  background: url('https://api.iconify.design/gg/dice-5.svg?color=black') no-repeat center center / contain;
+}
+
+.cube_face_bottom {
+  background: url('https://api.iconify.design/gg/dice-2.svg?color=black') no-repeat center center / contain;
+}

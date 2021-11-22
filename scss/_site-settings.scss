@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+
+$lato:'lato';
+
+// = Colors
+// -----------------------------
+
+// Graphic chart
+$red: #df2e30;
+$color_primary: blue ;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
