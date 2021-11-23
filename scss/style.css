@@ -58,14 +58,24 @@ header .dice__master--title {
 }
 
 header .Rules--p {
-  padding-top: 12px;
   color: blue;
 }
 
 /***** End header *****/
 /***** main *****/
-/* Dice */
-.dice {
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  /* Dice */
+}
+
+main .dice__game--frames {
+  margin: 10%;
+  width: 60vh;
+  height: 60vh;
+}
+
+main .dice {
   margin: 12rem auto 0;
   width: var(--size);
   height: var(--size);
@@ -75,36 +85,36 @@ header .Rules--p {
           transform: rotate(30deg) rotateZ(30deg);
 }
 
-.dice .cube_face {
+main .dice .cube_face {
   position: absolute;
   opacity: 0.8;
   width: var(--size);
   height: var(--size);
 }
 
-.dice .cube_face_front {
+main .dice .cube_face_front {
   background: url("https://api.iconify.design/gg/dice-1.svg?color=black") no-repeat center center/contain;
   -webkit-transform: translateZ(calc(var(--size_dice) / 2));
           transform: translateZ(calc(var(--size_dice) / 2));
 }
 
-.dice .cube_face_back {
+main .dice .cube_face_back {
   background: url("https://api.iconify.design/gg/dice-6.svg?color=black") no-repeat center center/contain;
 }
 
-.dice .cube_face_right {
+main .dice .cube_face_right {
   background: url("https://api.iconify.design/gg/dice-3.svg?color=black") no-repeat center center/contain;
 }
 
-.dice .cube_face_left {
+main .dice .cube_face_left {
   background: url("https://api.iconify.design/gg/dice-4.svg?color=black") no-repeat center center/contain;
 }
 
-.dice .cube_face_top {
+main .dice .cube_face_top {
   background: url("https://api.iconify.design/gg/dice-5.svg?color=black") no-repeat center center/contain;
 }
 
-.dice .cube_face_bottom {
+main .dice .cube_face_bottom {
   background: url("https://api.iconify.design/gg/dice-2.svg?color=black") no-repeat center center/contain;
 }
 
