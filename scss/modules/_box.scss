@@ -4,34 +4,22 @@
 
 /***** header *****/
 
-header {
-  .header--logo {
-    content: url("https://api.iconify.design/ion/dice-outline.svg?width=50&height=50&color=blue");
-  }
 
-  .dice__master--title {
-    color: $color_primary;
-  }
-
-  .Rules--p {
-    
-    color: $color_primary;
-  }
-}
 /***** End header *****/
 
 /***** main *****/
 
 main {
 
-  min-height: 100vh;
-  min-width: 100vw;
- 
+  #box__game{
+    margin: 5%;
+    margin-top: 10%;
+    min-height: 80vh !important;
+    min-width: 100vw;
+  }
 
-  .dice__game--frames {
-    margin: 10%;
-    width: 60vh;
-    height: 60vh;
+  #game--frame {
+    border-color: red;
   }
 
   /* Dice */

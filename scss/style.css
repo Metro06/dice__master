@@ -49,30 +49,21 @@ p {
    Module/Box
    ======================= */
 /***** header *****/
-header .header--logo {
-  content: url("https://api.iconify.design/ion/dice-outline.svg?width=50&height=50&color=blue");
-}
-
-header .dice__master--title {
-  color: blue;
-}
-
-header .Rules--p {
-  color: blue;
-}
-
 /***** End header *****/
 /***** main *****/
 main {
-  min-height: 100vh;
-  min-width: 100vw;
   /* Dice */
 }
 
-main .dice__game--frames {
-  margin: 10%;
-  width: 60vh;
-  height: 60vh;
+main #box__game {
+  margin: 5%;
+  margin-top: 10%;
+  min-height: 80vh !important;
+  min-width: 100vw;
+}
+
+main #game--frame {
+  border-color: red;
 }
 
 main .dice {
