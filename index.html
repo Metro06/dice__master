@@ -107,33 +107,34 @@
         <div class="d-flex justify-content-center" id="box__game">
 
           <!-- Frame -->
-          <div class="d-flex flex-nowrap row row-cols-2 col-10 col-xl-6 col-xxl-6 border border-5 border-success "
+          <div class="d-flex flex-nowrap row row-cols-2 col-10 col-xl-6 col-xxl-6 border border-5 border-primary"
             id="game--frame">
+            
 
             <!-- player_one -->
             <div class="col-4 d-flex justify-content-center" id="player__one">
               <div class="mt-5 mb-5 d-flex flex-column justify-content-between" id="player__one__turn">
                 <div class="text-center" id="player__info">
-                  <h3 id="player__one--name">player 1</h3>
-                  <h5 id="player__one--score">score</h5>
+                  <h3 class="fs-1" id="player__one--name">player 1</h3>
+                  <h5 class="fs-2" id="player__one--score">score</h5>
                 </div>
                 <div class="bg-danger text-center">
-                  <h6>Current</h6>
-                  <h6 class="text-white">score</h6>
+                  <h6 class="fs-5">Current</h6>
+                  <h6 class="fs-6 text-white">score</h6>
                 </div>
               </div>
             </div>
 
             <!-- setup -->
-            <div class="mb-4 mt-2 col-4 d-flex flex-column justify-content-between align-items-center" id="setup game">
+            <div class="mb-4 mt-2 col-4 d-flex flex-column       justify-content-between align-items-center text-center" id="setup game">
               <div>
-                <button type="btn" id="new__game">
-                  <h6 class="text-center">New Game</h6>
+                <button type="button" class="btn btn-primary fs-5" id="new__game">
+                  New Game
                 </button>
               </div>
               <div class="d-flex flex-column">
                 <!-- btn_Roll Dice -->
-                <button class="px-2 btn btn-light" id="Roll__dice">
+                <button type="button" class="mb-3 px-2 btn btn-light" id="Roll__dice">
                     <h5 class="text-center pb-2" >
                       Roll Dice
                     </h5>
@@ -143,7 +144,7 @@
                     </svg>
                 </button>
                 <!-- btn_hold -->
-                <button class="px-2 btn btn-light" id="Roll__dice" id="btn__hold">
+                <button type="button" class="px-2 btn btn-light" id="Roll__dice" id="btn__hold">
                     <h5 class="text-center" >
                       hold
                     </h5>
@@ -157,15 +158,15 @@
 
             <!-- player_two -->
             <div class="col-4 d-flex justify-content-center" id="player two">
-              <div class="mt-5 mb-5 d-flex flex-column justify-content-between" id="player__two__info">
+              <div class="text-center mt-5 mb-5 d-flex flex-column justify-content-between" id="player__two__info">
                 <div class="">
-                  <h3 class="text-center" id="player__two--name">player 2</h3>
-                  <h5 class="text-center" id="player__two--score">score</h5>
+                  <h3 class="fs-1" id="player__two--name">player 2</h3>
+                  <h5 class="fs-2" id="player__two--score">score</h5>
                 </div>
                 <div class="bg-danger">
                   
-                  <h6 class="text-center" id="btn__current">Current</h6>
-                  <h6 class="text-center text-white">score</h6>
+                  <h6 class="fs-5" id="btn__current">Current</h6>
+                  <h6 class="fs-6 text-white">score</h6>
                 </div>
 
               </div>

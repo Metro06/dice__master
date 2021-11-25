@@ -61,6 +61,12 @@ main #box__game {
   min-width: 110vw;
 }
 
+main #box__game #game--frame {
+  border: 3rem !important;
+  border-style: groove !important;
+  border-color: burlywood !important;
+}
+
 main .dice {
   margin: 12rem auto 0;
   width: var(--size);
