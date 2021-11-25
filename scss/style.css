@@ -62,9 +62,9 @@ main #box__game {
 }
 
 main #box__game #game--frame {
-  border: 3rem !important;
+  border: 1rem !important;
   border-style: groove !important;
-  border-color: burlywood !important;
+  border-color: rgba(47, 112, 112, 0.856) !important;
 }
 
 main .dice {
@@ -111,4 +111,6 @@ main .dice .cube_face_bottom {
 }
 
 /***** End main *****/
+/***** footer *****/
+/***** End footer *****/
 /*# sourceMappingURL=style.css.map */
