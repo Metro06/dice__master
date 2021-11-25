@@ -4,11 +4,14 @@
 <head>
   <title>Dice Master</title>
   <meta name="description"
-    content="dice master est un jeux de dé multijoueur dont le but est d'arriver le premier a 100 point.">
+        content="dice master est un jeux de dé multijoueur dont le but est d'arriver le premier a 100 point.">
+        <!-- description -->
   <meta name="keywords" content="dé, jeux à deux, jeux de société">
+        <!-- keywords -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="scss/style.css">
+        <!-- css -->
 
 
   <!-- Bootstrap CSS v5.0.2 -->
@@ -18,7 +21,7 @@
 </head>
 
 <body>
-
+<!-- header -->
   <header>
 
     <div class="container-fluid bg-dark">
@@ -98,58 +101,71 @@
 
   <main>
     <section>
+
+      <!-- game -->
       <article class="container-fluid d-flex justify-content-center">
         <div class="d-flex justify-content-center" id="box__game">
+
+          <!-- Frame -->
           <div class="d-flex flex-nowrap row row-cols-2 col-10 col-xl-6 col-xxl-6 border border-5 border-success "
             id="game--frame">
 
-            <div class="bg-primary col-4 d-flex justify-content-center" id="player__one">
+            <!-- player_one -->
+            <div class="col-4 d-flex justify-content-center" id="player__one">
               <div class="mt-5 mb-5 d-flex flex-column justify-content-between" id="player__one__turn">
-                <div class="bg-secondary" id="player__info">
-                  <h3 class="text-center" id="player__one--name">player 1</h3>
-                  <h5 class="text-center" id="player__one--score">score</h5>
+                <div class="text-center" id="player__info">
+                  <h3 id="player__one--name">player 1</h3>
+                  <h5 id="player__one--score">score</h5>
                 </div>
-                <div class="bg-danger">
-                  <h6 class="text-center">Current</h6>
+                <div class="bg-danger text-center">
+                  <h6>Current</h6>
+                  <h6 class="text-white">score</h6>
                 </div>
               </div>
             </div>
 
-            <div class="mb-4 mt-2 col-4 d-flex flex-column justify-content-between" id="setup game">
+            <!-- setup -->
+            <div class="mb-4 mt-2 col-4 d-flex flex-column justify-content-between align-items-center" id="setup game">
               <div>
-                <h6 class="text-center">New Game</h6>
+                <button type="btn" id="new__game">
+                  <h6 class="text-center">New Game</h6>
+                </button>
               </div>
-              <div>
-                <h5 class="text-center pb-2" >
-                  <button class="px-2 btn btn-light" id="Roll__dice">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+              <div class="d-flex flex-column">
+                <!-- btn_Roll Dice -->
+                <button class="px-2 btn btn-light" id="Roll__dice">
+                    <h5 class="text-center pb-2" >
+                      Roll Dice
+                    </h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="dark" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                       <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                       <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                     </svg>
-                  </button>
-                  Roll Dice
-                </h5>
-                <h5 class="text-center" >
-                  <button class="px-2 btn btn-light" id="Roll__dice" id="hold">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+                </button>
+                <!-- btn_hold -->
+                <button class="px-2 btn btn-light" id="Roll__dice" id="btn__hold">
+                    <h5 class="text-center" >
+                      hold
+                    </h5>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="dark" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
                       <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
                     </svg>
                   </button>
-                  hold
-                </h5>
               </div>
             </div>
 
-            <div class="col-4 bg-primary d-flex justify-content-center" id="player two">
+            <!-- player_two -->
+            <div class="col-4 d-flex justify-content-center" id="player two">
               <div class="mt-5 mb-5 d-flex flex-column justify-content-between" id="player__two__info">
-                <div class="bg-secondary">
+                <div class="">
                   <h3 class="text-center" id="player__two--name">player 2</h3>
                   <h5 class="text-center" id="player__two--score">score</h5>
                 </div>
                 <div class="bg-danger">
                   
-                  <h6 class="text-center" id="current">Current</h6>
+                  <h6 class="text-center" id="btn__current">Current</h6>
+                  <h6 class="text-center text-white">score</h6>
                 </div>
 
               </div>
@@ -158,7 +174,7 @@
       </article>
     </section>
   </main>
-
+<!-- footer -->
   <footer class="text-center text-white bg-dark">
     <!-- Grid container -->
     <div class="container pt-4">
@@ -174,7 +190,7 @@
 
         <!-- Twitter -->
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-twitter"
+          <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="blue" class="bi bi-twitter"
             viewBox="0 0 16 16">
             <path
               d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
