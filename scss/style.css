@@ -51,60 +51,42 @@ p {
 /***** header *****/
 /***** End header *****/
 /***** main *****/
-main {
+
   /* Dice */
-}
+
 
 main #box__game #game--frame {
   border: 1.5rem !important;
   border-style: groove !important;
-  border-color: rgba(8, 75, 75, 0.856) !important;
+  border-color: rgba(9, 128, 128, 0.856) !important;
   margin: 5%;
   min-height: 80vh;
   min-width: 95vw !important;
 }
 
-main .dice {
-  margin: 12rem auto 0;
-  width: var(--size);
-  height: var(--size);
+main #box__game #perspective {
+  width: 100px;
+  height: 100px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+main #box__game #perspective #dice {
+  width: 100px;
+  height: 100px;
+  position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: rotate(30deg) rotateZ(30deg);
-          transform: rotate(30deg) rotateZ(30deg);
 }
 
-main .dice .cube_face {
+main #box__game #perspective #dice #face {
   position: absolute;
-  opacity: 0.8;
-  width: var(--size);
-  height: var(--size);
+  width: 100px;
+  height: 100px;
 }
 
-main .dice .cube_face_front {
-  background: url("https://api.iconify.design/gg/dice-1.svg?color=black") no-repeat center center/contain;
-  -webkit-transform: translateZ(calc(var(--size_dice) / 2));
-          transform: translateZ(calc(var(--size_dice) / 2));
-}
-
-main .dice .cube_face_back {
-  background: url("https://api.iconify.design/gg/dice-6.svg?color=black") no-repeat center center/contain;
-}
-
-main .dice .cube_face_right {
-  background: url("https://api.iconify.design/gg/dice-3.svg?color=black") no-repeat center center/contain;
-}
-
-main .dice .cube_face_left {
-  background: url("https://api.iconify.design/gg/dice-4.svg?color=black") no-repeat center center/contain;
-}
-
-main .dice .cube_face_top {
-  background: url("https://api.iconify.design/gg/dice-5.svg?color=black") no-repeat center center/contain;
-}
-
-main .dice .cube_face_bottom {
-  background: url("https://api.iconify.design/gg/dice-2.svg?color=black") no-repeat center center/contain;
+main #box__game #perspective #dice #face__front {
+  background-image: url("../../media/examples/lizard.png");
 }
 
 /***** End main *****/

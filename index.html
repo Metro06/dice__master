@@ -115,7 +115,7 @@
 
 
             <!-- player_one -->
-            <div class="col-4 d-flex justify-content-center" id="player__one">
+            <div class="col-5 d-flex justify-content-center" id="player__one">
               <div class="mt-5 mb-5 d-flex flex-column justify-content-between" id="player__one__turn">
                 <div class="text-center" id="player__info">
                   <h3 class="fs-2" id="player__one--name">player 1</h3>
@@ -129,23 +129,23 @@
             </div>
 
             <!-- setup -->
-            <div class="mb-4 mt-2 col-4 d-flex flex-column       justify-content-between align-items-center text-center"
+            <div class="mb-4 mt-2 col-2 d-flex flex-column 
+            justify-content-between align-items-center text-center fx-6"
               id="setup game">
               <div class="d-grid ">
-                <button type="button" class="btn-sm btn-primary fs-6" id="new__game">
+                <button type="button" class="btn-sm btn-primary" id="new__game">
                   New Game
                 </button>
               </div>
               <!-- the dice -->
-
-              <div id="dice">
-                <div id="dice__face">
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                  <div>6</div>
+              <div id="perspective">
+                <div id="dice">
+                 <div id="face face__front"></div>
+                 <div id="face face__top"></div>
+                 <div id="face face__bottom"></div>
+                 <div id="face face__left"></div>
+                 <div id="face face__right"></div>
+                 <div id="face face__back"></div>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@
             </div>
 
             <!-- player_two -->
-            <div class="col-4 d-flex justify-content-center" id="player two">
+            <div class="col-5 d-flex justify-content-center" id="player two">
               <div class="text-center mt-5 mb-5 d-flex flex-column justify-content-between" id="player__two__info">
                 <div class="">
                   <h3 class="fs-2" id="player__two--name">player 2</h3>
