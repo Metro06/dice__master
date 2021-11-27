@@ -79,7 +79,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
               </div>
             </div>
           </div>
@@ -131,15 +131,29 @@
             <!-- setup -->
             <div class="mb-4 mt-2 col-4 d-flex flex-column       justify-content-between align-items-center text-center"
               id="setup game">
-              <div>
-                <button type="button" class="btn btn-primary fs-6" id="new__game">
+              <div class="d-grid ">
+                <button type="button" class="btn-sm btn-primary fs-6" id="new__game">
                   New Game
                 </button>
               </div>
+              <!-- the dice -->
+
+              <div id="dice">
+                <div id="dice__face">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                  <div>6</div>
+                </div>
+              </div>
+
               <div class="d-flex flex-column">
+
                 <!-- btn_Roll Dice -->
-                <button type="button" class="mb-3 px-2 btn btn-light" id="Roll__dice">
-                  <h5 class="text-center pb-2">
+                <button type="button" class=" mb-1 btn-sm btn-info" id="Roll__dice">
+                  <h5 class="text-center">
                     Roll Dice
                   </h5>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="dark" class="bi bi-arrow-repeat"
@@ -150,9 +164,10 @@
                       d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
                   </svg>
                 </button>
+
                 <!-- btn_hold -->
-                <button type="button" class="px-2 btn btn-light" id="Roll__dice" id="btn__hold">
-                  <h5 class="text-center">
+                <button type="button" class="btn-sm btn-info" id="btn__hold">
+                  <h5>
                     hold
                   </h5>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="dark"
