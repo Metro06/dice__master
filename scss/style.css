@@ -51,42 +51,97 @@ p {
 /***** header *****/
 /***** End header *****/
 /***** main *****/
-
-  /* Dice */
-
-
-main #box__game #game--frame {
-  border: 1.5rem !important;
-  border-style: groove !important;
-  border-color: rgba(9, 128, 128, 0.856) !important;
+#game--frame {
+  border: 1.5rem;
+  border-style: groove;
+  border-color: rgba(9, 128, 128, 0.856);
   margin: 5%;
   min-height: 80vh;
-  min-width: 95vw !important;
+  min-width: 95vw;
 }
 
-main #box__game #perspective {
-  width: 100px;
-  height: 100px;
+#container {
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  padding-bottom: 10em;
 }
 
-main #box__game #perspective #dice {
-  width: 100px;
-  height: 100px;
+#dice {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  -webkit-transform: rotateX(177deg) rotateY(202deg);
+          transform: rotateX(177deg) rotateY(202deg);
+  min-height: 0px !important;
 }
 
-main #box__game #perspective #dice #face {
-  position: absolute;
-  width: 100px;
-  height: 100px;
+.face {
+  width: 50px;
+  height: 50px;
 }
 
-main #box__game #perspective #dice #face__front {
-  background-image: url("../../media/examples/lizard.png");
+#face__front {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background-image: url("../image/dice-six-faces-one.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#face__top {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  background-image: url("../image/dice-six-faces-two.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#face__bottom {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: translate(0px, -100px) rotateX(-90deg);
+          transform: translate(0px, -100px) rotateX(-90deg);
+  background-image: url("../image/dice-six-faces-three.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#face__left {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform: translate(0px, -150px) rotateY(90deg);
+          transform: translate(0px, -150px) rotateY(90deg);
+  background-image: url("../image/dice-six-faces-four.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#face__right {
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform: translate(0px, -200px) rotateY(-90deg);
+          transform: translate(0px, -200px) rotateY(-90deg);
+  background-image: url("../image/dice-six-faces-five.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#face__back {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform: translate(0px, -250px) translateZ(-50px);
+          transform: translate(0px, -250px) translateZ(-50px);
+  background-image: url("../image/dice-six-faces-six.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /***** End main *****/

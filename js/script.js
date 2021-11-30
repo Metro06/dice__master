@@ -1,16 +1,3 @@
+const dice_img = [dice-1.svg, dice-2.svg, dice-3.svg, dice-4.svg, dice-5.svg, dice-6.svg];
 
-function draw (){
-  const canvas = document.getElementById('canvas')
-  
-  if(canvas.getContext('2d')){
-    const ctx = canvas.getContext('2d')
-    // echéquier
-    
-
-  }else{
-    console.log('Le canvas ne fonctionne pas')
-  }
-  return draw
-}
-
-draw()
+const 
