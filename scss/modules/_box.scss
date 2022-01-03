@@ -1,3 +1,5 @@
+@import url("_site-settings");
+
 /* ==|====================
    Module/Box
    ======================= */
@@ -10,83 +12,84 @@
 
 
     #game--frame {
-      border: 1.5rem ;
-      border-style: groove ;
-      border-color: rgba(9, 128, 128, 0.856) ;
+      border: 1.5rem;
+      border-style: groove;
+      border-color:rgb(28, 34, 116);
       margin: 5%;
       min-height: 80vh;
       min-width: 95vw ;
+
+      
+      // Dice
+      #container {
+      
+        perspective: 1000px;
+        padding-bottom: 15em;
+      }
+      .dice {
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(177deg) rotateY(202deg);
+      }
+  
+  
+      .face {
+       
+        width: $size_dice;
+        height: $size_dice;
+      }
+  
+      #face__one {
+        transform-origin: center;
+        background-image: url("../image/dice-six-faces-one.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+  
+      #face__two {
+        transform-origin: top ;
+        transform: rotateX(-90deg) ;
+        background-image: url("../image/dice-six-faces-two.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+  
+      #face__five {
+        transform-origin: top ;
+        transform: translate(0px, -150px) rotateX(-90deg);
+        background-image: url("../image/dice-six-faces-five.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+  
+      #face__three {
+        transform-origin: left ;
+        transform: rotateY(90deg) ;
+        transform: translate(0px, -225px) rotateY(90deg);
+        background-image: url("../image/dice-six-faces-three.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+  
+      #face__four {
+        transform-origin: right ;
+        transform: rotateY(90deg) ;
+        transform: translate(0px, -300px) rotateY(-90deg);
+        background-image: url("../image/dice-six-faces-four.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+  
+      #face__six {
+        transform-origin: top;
+        transform: rotateY(90deg) ;
+        transform: translate(0px, -375px) translateZ(-75px);
+        background-image: url("../image/dice-six-faces-six.svg") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
 
-    // Dice
-    #container {
-    
-      perspective: 1000px ;
-      padding-bottom: 10em;
-    }
-    #dice {
-      position: relative ;
-      transform-style: preserve-3d;
-      transform: rotateX(177deg) rotateY(202deg);
-      min-height: 0px !important;
-    }
-
-
-    .face {
-     
-      width: 50px ;
-      height: 50px ;
-    }
-
-    #face__front {
-      transform-origin: center ;
-      background-image: url("../image/dice-six-faces-one.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #face__top {
-      transform-origin: top ;
-      transform: rotateX(-90deg) ;
-      background-image: url("../image/dice-six-faces-two.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #face__bottom {
-      transform-origin: top ;
-      transform: translate(0px, -100px) rotateX(-90deg);
-      background-image: url("../image/dice-six-faces-three.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #face__left {
-      transform-origin: left ;
-      transform: rotateY(90deg) ;
-      transform: translate(0px, -150px) rotateY(90deg);
-      background-image: url("../image/dice-six-faces-four.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #face__right {
-      transform-origin: right ;
-      transform: rotateY(90deg) ;
-      transform: translate(0px, -200px) rotateY(-90deg);
-      background-image: url("../image/dice-six-faces-five.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #face__back {
-      transform-origin: top;
-      transform: rotateY(90deg) ;
-      transform: translate(0px, -250px) translateZ(-50px);
-      background-image: url("../image/dice-six-faces-six.svg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
 
 /***** End main *****/
 

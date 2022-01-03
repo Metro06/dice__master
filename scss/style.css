@@ -15,11 +15,13 @@
 /* Vendor */
 /* Override */
 /* Base */
-@import url(_site-settings.scss);
+@import url("_site-settings.scss");
 /* ===========================
    Base
    =========================== */
 /* reset */
+@import url("_site-settings");
+@import url("_base.scss");
 *,
 html,
 body,
@@ -38,12 +40,6 @@ p {
 /* ==|====================
    Layout/Constrained
    ======================= */
-.l-constrained {
-  max-width: pxtoem(1140, 16);
-  padding: 0 pxtoem(20, 16);
-  margin: 0 auto;
-}
-
 /* Modules */
 /* ==|====================
    Module/Box
@@ -54,33 +50,32 @@ p {
 #game--frame {
   border: 1.5rem;
   border-style: groove;
-  border-color: rgba(9, 128, 128, 0.856);
+  border-color: #1c2274;
   margin: 5%;
   min-height: 80vh;
   min-width: 95vw;
 }
 
-#container {
+#game--frame #container {
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  padding-bottom: 10em;
+  padding-bottom: 15em;
 }
 
-#dice {
+#game--frame .dice {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: rotateX(177deg) rotateY(202deg);
           transform: rotateX(177deg) rotateY(202deg);
-  min-height: 0px !important;
 }
 
-.face {
-  width: 50px;
-  height: 50px;
+#game--frame .face {
+  width: 75px;
+  height: 75px;
 }
 
-#face__front {
+#game--frame #face__one {
   -webkit-transform-origin: center;
           transform-origin: center;
   background-image: url("../image/dice-six-faces-one.svg");
@@ -88,7 +83,7 @@ p {
   background-size: contain;
 }
 
-#face__top {
+#game--frame #face__two {
   -webkit-transform-origin: top;
           transform-origin: top;
   -webkit-transform: rotateX(-90deg);
@@ -98,47 +93,47 @@ p {
   background-size: contain;
 }
 
-#face__bottom {
+#game--frame #face__five {
   -webkit-transform-origin: top;
           transform-origin: top;
-  -webkit-transform: translate(0px, -100px) rotateX(-90deg);
-          transform: translate(0px, -100px) rotateX(-90deg);
-  background-image: url("../image/dice-six-faces-three.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#face__left {
-  -webkit-transform-origin: left;
-          transform-origin: left;
-  -webkit-transform: rotateY(90deg);
-          transform: rotateY(90deg);
-  -webkit-transform: translate(0px, -150px) rotateY(90deg);
-          transform: translate(0px, -150px) rotateY(90deg);
-  background-image: url("../image/dice-six-faces-four.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#face__right {
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: rotateY(90deg);
-          transform: rotateY(90deg);
-  -webkit-transform: translate(0px, -200px) rotateY(-90deg);
-          transform: translate(0px, -200px) rotateY(-90deg);
+  -webkit-transform: translate(0px, -150px) rotateX(-90deg);
+          transform: translate(0px, -150px) rotateX(-90deg);
   background-image: url("../image/dice-six-faces-five.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-#face__back {
+#game--frame #face__three {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform: translate(0px, -225px) rotateY(90deg);
+          transform: translate(0px, -225px) rotateY(90deg);
+  background-image: url("../image/dice-six-faces-three.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#game--frame #face__four {
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-transform: translate(0px, -300px) rotateY(-90deg);
+          transform: translate(0px, -300px) rotateY(-90deg);
+  background-image: url("../image/dice-six-faces-four.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#game--frame #face__six {
   -webkit-transform-origin: top;
           transform-origin: top;
   -webkit-transform: rotateY(90deg);
           transform: rotateY(90deg);
-  -webkit-transform: translate(0px, -250px) translateZ(-50px);
-          transform: translate(0px, -250px) translateZ(-50px);
+  -webkit-transform: translate(0px, -375px) translateZ(-75px);
+          transform: translate(0px, -375px) translateZ(-75px);
   background-image: url("../image/dice-six-faces-six.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -147,4 +142,127 @@ p {
 /***** End main *****/
 /***** footer *****/
 /***** End footer *****/
+.is-btn-hidden {
+  display: none;
+}
+
+.is-roll-dice-player-one {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(177deg) rotateY(202deg);
+          transform: rotateX(177deg) rotateY(202deg);
+  -webkit-animation: rollDiceplayerOne 2s;
+          animation: rollDiceplayerOne 2s;
+}
+
+.is-roll-dice-player-two {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(177deg) rotateY(202deg);
+          transform: rotateX(177deg) rotateY(202deg);
+  -webkit-animation: rollDiceplayertwo 2s;
+          animation: rollDiceplayertwo 2s;
+}
+
+@-webkit-keyframes rollDiceplayerOne {
+  0% {
+    -webkit-transform: rotateX(270deg);
+            transform: rotateX(270deg);
+    left: -400px;
+    top: 200px;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(358deg);
+            transform: rotateX(358deg);
+    left: 0px;
+    top: 300px;
+    -webkit-transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
+    -webkit-transform: rotateY(358deg);
+            transform: rotateY(358deg);
+  }
+}
+
+@keyframes rollDiceplayerOne {
+  0% {
+    -webkit-transform: rotateX(270deg);
+            transform: rotateX(270deg);
+    left: -400px;
+    top: 200px;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(358deg);
+            transform: rotateX(358deg);
+    left: 0px;
+    top: 300px;
+    -webkit-transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
+    -webkit-transform: rotateY(358deg);
+            transform: rotateY(358deg);
+  }
+}
+
+@-webkit-keyframes rollDiceplayertwo {
+  0% {
+    -webkit-transform: rotateX(270deg);
+            transform: rotateX(270deg);
+    right: -400px;
+    top: 200px;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(358deg);
+            transform: rotateX(358deg);
+    right: 0px;
+    top: 300px;
+    -webkit-transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
+    -webkit-transform: rotateY(358deg);
+            transform: rotateY(358deg);
+  }
+}
+
+@keyframes rollDiceplayertwo {
+  0% {
+    -webkit-transform: rotateX(270deg);
+            transform: rotateX(270deg);
+    right: -400px;
+    top: 200px;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(358deg);
+            transform: rotateX(358deg);
+    right: 0px;
+    top: 300px;
+    -webkit-transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
+    -webkit-transform: rotateY(358deg);
+            transform: rotateY(358deg);
+  }
+}
+
+.is-turn-player-off {
+  background-color: #05054b !important;
+}
+
+.is-turn-player-active {
+  background-color: #6dc2f3 !important;
+}
 /*# sourceMappingURL=style.css.map */
