@@ -15,18 +15,19 @@
       border: 1.5rem;
       border-style: groove;
       border-color:rgb(28, 34, 116);
-      margin: 5%;
-      min-height: 80vh;
+      margin: 1%;
+      min-height: 90vh;
+      max-height: 90vh;
       min-width: 95vw ;
 
       
       // Dice
       #container {
-      
         perspective: 1000px;
-        padding-bottom: 15em;
+        
       }
       .dice {
+        max-height: 25vh;
         position: relative;
         transform-style: preserve-3d;
         transform: rotateX(177deg) rotateY(202deg);

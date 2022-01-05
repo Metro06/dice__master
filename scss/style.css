@@ -51,18 +51,19 @@ p {
   border: 1.5rem;
   border-style: groove;
   border-color: #1c2274;
-  margin: 5%;
-  min-height: 80vh;
+  margin: 1%;
+  min-height: 90vh;
+  max-height: 90vh;
   min-width: 95vw;
 }
 
 #game--frame #container {
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  padding-bottom: 15em;
 }
 
-#game--frame .dice {
+#game--frame .dice, #game--frame .is-roll-dice-player-one, #game--frame .is-roll-dice-player-two {
+  max-height: 25vh;
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -147,31 +148,21 @@ p {
 }
 
 .is-roll-dice-player-one {
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: rotateX(177deg) rotateY(202deg);
-          transform: rotateX(177deg) rotateY(202deg);
-  -webkit-animation: rollDiceplayerOne 2s;
-          animation: rollDiceplayerOne 2s;
+  -webkit-animation: rollDiceplayerOne 1s;
+          animation: rollDiceplayerOne 1s;
 }
 
 .is-roll-dice-player-two {
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: rotateX(177deg) rotateY(202deg);
-          transform: rotateX(177deg) rotateY(202deg);
-  -webkit-animation: rollDiceplayertwo 2s;
-          animation: rollDiceplayertwo 2s;
+  -webkit-animation: rollDiceplayertwo 1s;
+          animation: rollDiceplayertwo 1s;
 }
 
 @-webkit-keyframes rollDiceplayerOne {
   0% {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
-    left: -400px;
-    top: 200px;
+    left: -900px;
+    top: 150px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -181,7 +172,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     left: 0px;
-    top: 300px;
+    top: 150px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -193,8 +184,8 @@ p {
   0% {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
-    left: -400px;
-    top: 200px;
+    left: -900px;
+    top: 150px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -204,7 +195,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     left: 0px;
-    top: 300px;
+    top: 150px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -216,8 +207,8 @@ p {
   0% {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
-    right: -400px;
-    top: 200px;
+    right: -900px;
+    top: 150px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -227,7 +218,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     right: 0px;
-    top: 300px;
+    top: 150px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -239,8 +230,8 @@ p {
   0% {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
-    right: -400px;
-    top: 200px;
+    right: -900px;
+    top: 150px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -250,7 +241,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     right: 0px;
-    top: 300px;
+    top: 150px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -260,9 +251,13 @@ p {
 
 .is-turn-player-off {
   background-color: #05054b !important;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .is-turn-player-active {
   background-color: #6dc2f3 !important;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 /*# sourceMappingURL=style.css.map */

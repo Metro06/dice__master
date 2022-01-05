@@ -1,4 +1,160 @@
+class Game {
+
+  constructor() {
+    this.currentTurn = undefined;
+    this.playerWinner = undefined;
+    this.currentScore = 0;
+    this.dice = document.getElementById('dice');
+    this.faceDiceRandom = document.getElementById('face__one')
+    this.btnRollDice = document.getElementById('Roll__dice');
+    this.btnHold = document.getElementById('btn__hold');
+    this.btnNewGame = document.getElementById('new__game');
+
+
+  }
+
+ 
+
+  // stop the spam btn
+  setDebounce = function (callback, delay) {
+    var timer;
+    return function () {
+      var args = arguments;
+      var context = this;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        callback.apply(context, args);
+      }, delay)
+    }
+  }
+
+  // btn append
+  setBtnAppend = function (g) {
+    g.btnRollDice.classList.remove('is-btn-hidden');
+    g.btnHold.classList.remove('is-btn-hidden');
+  }
+
+
+  // Number random and add score to current player
+  setRandomNumber = function (g, p1, p2) {
+
+    let randomNumber = Math.floor(Math.random() * (6 - 1) + 1);
+    let addCurrentScore = randomNumber;
+     g.currentScore = addCurrentScore + g.currentScore;
+    console.log(randomNumber);
+    console.log(addCurrentScore );
+
+    if ( g.currentTurn === 1 ) {
+
+      if ( randomNumber !== 1 ){
+      p1.currentScore1.innerText = g.currentScore ;
+      console.log( p1.currentScore1 );
+      console.log( g.currentScore );
+      } else {
+        p1.currentScore1.innerHTML = 0;
+        g.currentTurn = 2;
+        g.currentScore = 0;
+        console.log(g.currentTurn)
+
+      }
+      
+    } else if (g.currentTurn === 2) {
+
+      if ( randomNumber !== 1 ){
+        p2.currentScore2.innerText = g.currentScore ;
+        console.log(p2.currentScore2);
+        console.log(g.currentScore);
+      } else {
+        p2.currentScore2.innerHTML = 0;
+        g.currentTurn = 1;
+        g.currentScore = 0;
+        console.log(g.currentTurn)
+      }
+
+    }
+    
+    // change face dice
+    switch (randomNumber) {
+      case 1:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-one.svg)";
+        break;
+      case 2:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-two.svg)";
+        break;
+      case 3:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-three.svg)";
+        break;
+      case 4:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-four.svg)";
+        break;
+      case 5:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-five.svg)";
+        break;
+      case 6:
+        this.faceDiceRandom.style.backgroundImage =
+          "url(../image/dice-six-faces-six.svg)";
+        break;
+    }
+
+
+  }
+
+   // remove dice
+   removeDice = function(g) {
+    g.dice.classList.add('is-btn-hidden');
+  }
+
+  // add dice
+  addDice = function(g) {
+    g.dice.classList.remove('is-btn-hidden');
+  }
+
+  setTurnDice = function (g) {
+
+    // the player1 turn the dice 
+    if (g.currentTurn === 1){
+
+      g.dice.classList.add('is-roll-dice-player-one')
+      g.addDice(g)
+      
+      setTimeout(() => {
+        g.dice.classList.remove('is-roll-dice-player-one')
+      }, 1500);
+
+      setTimeout(() => {
+        g.removeDice(g)
+      }, 2000);
+    
+    // the player2 turn the dice
+    } else {
+
+      g.dice.classList.add('is-roll-dice-player-two')
+      g.addDice(g)
+
+  
+      setTimeout(() => {
+        g.dice.classList.remove('is-roll-dice-player-two')
+      }, 1500);
+
+      setTimeout(() => {
+        g.removeDice(g)
+      }, 2000);
+
+    }
+
+
+
+  }
+
+}
+
 class PlayerOne {
+
   constructor() {
     this.speudo1 = document.getElementById('player__one--name');
     this.score1 = document.getElementById('player__one--score');
@@ -34,13 +190,11 @@ class PlayerOne {
 
   // modified background in active
   setPlayerOneActive = function (g, p1, p2) {
-    if (g.currentTurn === 1) {
+    
       p1.backgroundPlayerOne.classList.add('is-turn-player-active')
       p2.backgroundPlayerTwo.classList.remove('is-turn-player-active')
       p2.backgroundPlayerTwo.classList.add('is-turn-player-off')
-    } else {
 
-    }
   }
 
   // modified background in off
@@ -51,12 +205,15 @@ class PlayerOne {
 
 // Same for playerTwo
 class PlayerTwo {
+
   constructor() {
+
     this.speudo2 = document.getElementById('player__two--name');
     this.score2 = document.getElementById('player__two--score');
     this.currentScore2 = document.getElementById('player__two--currentScore');
     this.enterName2 = document.getElementById('name2');
     this.backgroundPlayerTwo = document.getElementById('player__two');
+ 
   }
 
   getSpeudo2 = function () {
@@ -72,8 +229,10 @@ class PlayerTwo {
   }
 
   setResetPlayerTwo = function () {
+
     this.score2.innerHTML = 0;
     this.currentScore2.innerHTML = 0;
+
   }
 
 
@@ -83,13 +242,13 @@ class PlayerTwo {
 
 
   setPlayerTwoActive = function (g, p2, p1) {
-    if (g.currentTurn === 2) {
+    
+    
       p2.backgroundPlayerTwo.classList.add('is-turn-player-active')
       p1.backgroundPlayerOne.classList.remove('is-turn-player-active')
       p1.backgroundPlayerOne.classList.add('is-turn-player-off')
-    } else {
-
-    }
+    
+    
   }
 
   setAddBackgroundPlayerTwoOff = function () {
@@ -99,110 +258,6 @@ class PlayerTwo {
 }
 
 
-class Game {
-
-  constructor() {
-    this.currentTurn = undefined;
-    this.playerWinner = undefined;
-    this.dice = document.getElementById('dice');
-    this.faceDiceRandom = document.getElementById('face__one')
-    this.btnRollDice = document.getElementById('Roll__dice');
-    this.btnHold = document.getElementById('btn__hold');
-
-
-  }
-
-  setBtnAppend = function (g) {
-    g.btnRollDice.classList.remove('is-btn-hidden');
-    g.btnHold.classList.remove('is-btn-hidden');
-  }
-
-  setDebounce = function (callback, delay) {
-    var timer;
-    return function () {
-      var args = arguments;
-      var context = this;
-      clearTimeout(timer);
-      timer = setTimeout(function () {
-        callback.apply(context, args);
-      }, delay)
-    }
-  }
-
-  setRandomNumber = function (g, p1, p2) {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
-    let addCurrentScore = randomNumber;
-    addCurrentScore += currentScore;
-
-
-
-    console.log(currentScore)
-
-      switch (randomNumber) {
-        case 1:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-one.svg)";
-          break;
-        case 2:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-two.svg)";
-          break;
-        case 3:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-three.svg)";
-          break;
-        case 4:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-four.svg)";
-          break;
-        case 5:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-five.svg)";
-          break;
-        case 6:
-          this.faceDiceRandom.style.backgroundImage =
-            "url(../image/dice-six-faces-six.svg)";
-          break;
-      }
-
-      if ( g.currentTurn === 1 ) {
-         p1.currentScore1 = currentScore
-      } else if ( g.currentTurn === 2 ) {
-        p2.currentScore2 = currentScore   
-
-
-
-      }
-
-  }
-
-  setTurnDice = function (g) {
-
-  
-    if( g.currentTurn === 1 ){
-
-    g.dice.classList.add('is-roll-dice-player-one')
-    
-    setTimeout(() => {
-      g.dice.classList.remove('is-roll-dice-player-one')
-    }, 2000);
-    
-
-  }else if( g.currentTurn === 2 ){
-    g.dice.classList.add('is-roll-dice-player-two')
-    setTimeout(() => {
-      g.dice.classList.remove('is-roll-dice-player-two')
-    }, 2000);
-  }
-
-
-  }
-
-
-
-
-
-}
 
 
 
