@@ -13,7 +13,7 @@ class Game {
 
   }
 
- 
+
 
   // stop the spam btn
   setDebounce = function (callback, delay) {
@@ -36,43 +36,49 @@ class Game {
 
 
   // Number random and add score to current player
-  setRandomNumber = function (g, p1, p2) {
+  setRandomNumber = function (g, p1, p2, fs) {
 
-    let randomNumber = Math.floor(Math.random() * (6 - 1) + 1);
-    let addCurrentScore = randomNumber;
-     g.currentScore = addCurrentScore + g.currentScore;
-    console.log(randomNumber);
-    console.log(addCurrentScore );
+    const randomNumber = Math.floor(Math.random() * (6 - 1) + 1);
+    const addCurrentScore = randomNumber;
+    g.currentScore = addCurrentScore + g.currentScore;
 
-    if ( g.currentTurn === 1 ) {
+    if (g.currentTurn === 1) {
+      // add current score for player 1 if randomNumber different of 1
+      if (randomNumber !== 1) {
 
-      if ( randomNumber !== 1 ){
-      p1.currentScore1.innerText = g.currentScore ;
-      console.log( p1.currentScore1 );
-      console.log( g.currentScore );
+        setTimeout( () => {
+          p1.currentScore1.innerText = g.currentScore;
+        }, 1000)
+
       } else {
+        // reset current score for player 1 if randomNumber equal a 1
+        // and changing currentTurn
+        fs.playSound()
         p1.currentScore1.innerHTML = 0;
         g.currentTurn = 2;
         g.currentScore = 0;
-        console.log(g.currentTurn)
 
       }
-      
+
     } else if (g.currentTurn === 2) {
 
-      if ( randomNumber !== 1 ){
-        p2.currentScore2.innerText = g.currentScore ;
-        console.log(p2.currentScore2);
-        console.log(g.currentScore);
+      if (randomNumber !== 1) {
+
+        setTimeout( () => {
+          p2.currentScore2.innerText = g.currentScore;
+        },1000)   
+
       } else {
+
+        fs.playSound()
         p2.currentScore2.innerHTML = 0;
         g.currentTurn = 1;
         g.currentScore = 0;
-        console.log(g.currentTurn)
+
       }
 
     }
-    
+
     // change face dice
     switch (randomNumber) {
       case 1:
@@ -104,24 +110,25 @@ class Game {
 
   }
 
-   // remove dice
-   removeDice = function(g) {
+  // remove dice
+  removeDice = function (g) {
     g.dice.classList.add('is-btn-hidden');
   }
 
   // add dice
-  addDice = function(g) {
+  addDice = function (g) {
     g.dice.classList.remove('is-btn-hidden');
   }
 
+  // turn the Dice for the player one or two
   setTurnDice = function (g) {
 
     // the player1 turn the dice 
-    if (g.currentTurn === 1){
+    if (g.currentTurn === 1) {
 
       g.dice.classList.add('is-roll-dice-player-one')
       g.addDice(g)
-      
+
       setTimeout(() => {
         g.dice.classList.remove('is-roll-dice-player-one')
       }, 1500);
@@ -129,14 +136,14 @@ class Game {
       setTimeout(() => {
         g.removeDice(g)
       }, 2000);
-    
-    // the player2 turn the dice
+
+      // the player2 turn the dice
     } else {
 
       g.dice.classList.add('is-roll-dice-player-two')
       g.addDice(g)
 
-  
+
       setTimeout(() => {
         g.dice.classList.remove('is-roll-dice-player-two')
       }, 1500);
@@ -150,6 +157,7 @@ class Game {
 
 
   }
+
 
 }
 
@@ -190,10 +198,10 @@ class PlayerOne {
 
   // modified background in active
   setPlayerOneActive = function (g, p1, p2) {
-    
-      p1.backgroundPlayerOne.classList.add('is-turn-player-active')
-      p2.backgroundPlayerTwo.classList.remove('is-turn-player-active')
-      p2.backgroundPlayerTwo.classList.add('is-turn-player-off')
+
+    p1.backgroundPlayerOne.classList.add('is-turn-player-active')
+    p2.backgroundPlayerTwo.classList.remove('is-turn-player-active')
+    p2.backgroundPlayerTwo.classList.add('is-turn-player-off')
 
   }
 
@@ -201,9 +209,9 @@ class PlayerOne {
   setAddBackgroundPlayerOneOff = function () {
     this.backgroundPlayerOne.classList.add('is-turn-player-off')
   }
+
 }
 
-// Same for playerTwo
 class PlayerTwo {
 
   constructor() {
@@ -213,7 +221,7 @@ class PlayerTwo {
     this.currentScore2 = document.getElementById('player__two--currentScore');
     this.enterName2 = document.getElementById('name2');
     this.backgroundPlayerTwo = document.getElementById('player__two');
- 
+
   }
 
   getSpeudo2 = function () {
@@ -242,13 +250,13 @@ class PlayerTwo {
 
 
   setPlayerTwoActive = function (g, p2, p1) {
-    
-    
-      p2.backgroundPlayerTwo.classList.add('is-turn-player-active')
-      p1.backgroundPlayerOne.classList.remove('is-turn-player-active')
-      p1.backgroundPlayerOne.classList.add('is-turn-player-off')
-    
-    
+
+
+    p2.backgroundPlayerTwo.classList.add('is-turn-player-active')
+    p1.backgroundPlayerOne.classList.remove('is-turn-player-active')
+    p1.backgroundPlayerOne.classList.add('is-turn-player-off')
+
+
   }
 
   setAddBackgroundPlayerTwoOff = function () {
@@ -256,6 +264,33 @@ class PlayerTwo {
   }
 
 }
+
+class Soundgame {
+
+  constructor(src) {
+
+    // create document html audio
+    this.sound = document.createElement("audio");
+    // add src
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+
+  }
+
+  playSound = function () {
+    this.sound.play();
+  }
+
+  stopSound = function () {
+    this.sound.pause();
+  }
+
+
+}
+
 
 
 
