@@ -105,6 +105,8 @@
   <main>
     <section>
 
+
+
       <!-- modal for players to enter speudo -->
       <!-- speudo player1 -->
       <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
@@ -115,11 +117,13 @@
               <h5 class="modal-title" id="exampleModalToggleLabel">joueur 1</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <input class="form-control" type="text" id="name1" placeholder="Default input"
-              aria-label="default input example">
+            <input class="form-control" type="text" id="name1" placeholder="Default input"  
+              aria-label="default input example" aria-required="true">
             <div class="modal-footer">
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                data-bs-dismiss="modal">validated</button>
+              <button class="btn btn-primary" id="next1" type="submit" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                data-bs-dismiss="modal">
+                validated
+              </button>
             </div>
           </div>
         </div>
@@ -133,9 +137,10 @@
               <h5 class="modal-title" id="exampleModalToggleLabel2">joueur 2</h5>
             </div>
             <input class="form-control" type="text" id="name2" placeholder="Default input"
-              aria-label="default input example">
+             aria-label="default input example" aria-required="true">
             <div class="modal-footer">
-              <button class="btn btn-primary" type="submit" data-bs-dismiss="modal" id="new__game">close</button>
+              <button class="btn btn-primary" type="submit" id="next2"  data-bs-dismiss="modal"
+                id="new__game">close</button>
             </div>
           </div>
         </div>
@@ -167,9 +172,9 @@
 
             <!-- setup -->
             <div class=" mt-2 mb-2 col-2 d-flex flex-column 
-            justify-content-between align-items-center text-center fx-6 is-turn-player-active" id="setup game">
+            justify-content-between align-items-center text-center fx-6 is-turn-player-active">
               <div>
-                <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
+                <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" role="button" id="new__game"
                   class="btn-sm btn-primary">
                   New Game
                 </button>
@@ -314,6 +319,22 @@
   <!-- JavaScript -->
   <script src="js/class.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#exampleModalToggle").on('shown.bs.modal', function () {
+        $(this).find('input[type="text"]').focus();
+        $(this).find('input[type="text"]').required();
+      });
+    });
+
+    $(document).ready(function () {
+      $("#exampleModalToggle2").on('shown.bs.modal', function () {
+        $(this).find('input[type="text"]').focus();
+        $(this).find('input[type="text"]').required();
+      });
+    });
+  </script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
