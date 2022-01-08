@@ -23,7 +23,7 @@
   0% {
     transform: rotateX(270deg);
     left: -900px;
-    top: 150px;
+    top: 200px;
     transform: rotateY(0deg);
     transform: rotateZ(0deg);
   }
@@ -31,7 +31,7 @@
   100% {
     transform: rotateX(358deg);
     left: 0px;
-    top: 150px;
+    top: -50px;
     transform: rotateZ(358deg);
     transform: rotateY(358deg);
   }
@@ -49,7 +49,7 @@
   100% {
     transform: rotateX(358deg);
     right: 0px;
-    top: 150px;
+    top: -50px;
     transform: rotateZ(358deg);
     transform: rotateY(358deg);
   }
@@ -58,11 +58,11 @@
 // background player
 
 .is-turn-player-off {
-  background-color: rgb(5, 5, 75) !important;
+  background-color: $is-turn-player-off;
   transition: 2s;
 }
 
 .is-turn-player-active {
-  background-color: rgb(109, 194, 243) !important;
+  background-color: $is-turn-player-active;
   transition: 1s;
 }

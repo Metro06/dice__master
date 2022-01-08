@@ -33,6 +33,16 @@ p {
   padding: 0;
   list-style-type: none;
   font-family: "lato";
+  font-size: clamp(1rem, 1vw, 0.5rem);
+  color: #1c2274;
+}
+
+img {
+  width: 2rem;
+}
+
+svg {
+  width: 2rem;
 }
 
 /* <--------------------------------------------------------> */
@@ -51,10 +61,15 @@ p {
   border: 1.5rem;
   border-style: groove;
   border-color: #1c2274;
-  margin: 1%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   min-height: 90vh;
   max-height: 90vh;
   min-width: 95vw;
+}
+
+#game--frame #new__game {
+  position: relative;
 }
 
 #game--frame #container {
@@ -63,12 +78,13 @@ p {
 }
 
 #game--frame .dice, #game--frame .is-roll-dice-player-one, #game--frame .is-roll-dice-player-two {
-  max-height: 25vh;
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  max-height: 75px;
   -webkit-transform: rotateX(177deg) rotateY(202deg);
           transform: rotateX(177deg) rotateY(202deg);
+  top: -67px;
 }
 
 #game--frame .face {
@@ -140,6 +156,31 @@ p {
   background-size: contain;
 }
 
+#playerWinner {
+  background-color: rgba(109, 194, 243, 0.781);
+}
+
+#playerWinner #playerWinner--header {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #05054b;
+  border-bottom: none;
+}
+
+#playerWinner #playerWinner--body {
+  text-align: center;
+  color: gold;
+  -webkit-text-decoration: double;
+          text-decoration: double;
+  background-color: #05054b;
+}
+
+#playerWinner #playerWinner--footer {
+  border-top: none;
+  background-color: #05054b;
+}
+
 /***** End main *****/
 /***** footer *****/
 /***** End footer *****/
@@ -162,7 +203,7 @@ p {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
     left: -900px;
-    top: 150px;
+    top: 200px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -172,7 +213,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     left: 0px;
-    top: 150px;
+    top: -50px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -185,7 +226,7 @@ p {
     -webkit-transform: rotateX(270deg);
             transform: rotateX(270deg);
     left: -900px;
-    top: 150px;
+    top: 200px;
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
@@ -195,7 +236,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     left: 0px;
-    top: 150px;
+    top: -50px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -218,7 +259,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     right: 0px;
-    top: 150px;
+    top: -50px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -241,7 +282,7 @@ p {
     -webkit-transform: rotateX(358deg);
             transform: rotateX(358deg);
     right: 0px;
-    top: 150px;
+    top: -50px;
     -webkit-transform: rotateZ(358deg);
             transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
@@ -250,13 +291,13 @@ p {
 }
 
 .is-turn-player-off {
-  background-color: #05054b !important;
+  background-color: #05054b;
   -webkit-transition: 2s;
   transition: 2s;
 }
 
 .is-turn-player-active {
-  background-color: #6dc2f3 !important;
+  background-color: #6dc2f3;
   -webkit-transition: 1s;
   transition: 1s;
 }

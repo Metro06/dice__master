@@ -13,8 +13,20 @@ p {
   padding: 0;
   list-style-type: none;
   font-family: $lato;
+  font-size: clamp(1rem, 1vw, 0.5rem); 
+  color: $colorFrame;
   
 }
+
+img {
+  width: 2rem;
+}
+
+svg {
+  width: 2rem;
+}
+
+
 
 /* <--------------------------------------------------------> */
 

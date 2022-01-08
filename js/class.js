@@ -8,15 +8,18 @@ class Game {
     this.faceDiceRandom = document.getElementById('face__one')
     this.currentTurn = undefined;
     this.currentScore = 0;
-    this.globalScore1 = 0;
-    this.globalScore2 = 0;
+    this.globalScore1 = 99;
+    this.globalScore2 = 99;
     this.playerWinner = undefined;
+    this.textWinner = document.getElementById('textWinner');
+    this.displayModalWinner = document.getElementById('displayPlayerWinner');
 
 
   }
 
 
   setResetGame = function (g, p1, p2) {
+    g.currentTurn = undefined;
     g.currentScore = 0;
     g.globalScore1 = 0;
     g.globalScore2 = 0;
@@ -43,7 +46,7 @@ class Game {
       }, 2000);
 
       // the player2 turn the dice
-    } else {
+    } else if (g.currentTurn) {
 
       g.dice.classList.add('is-roll-dice-player-two')
       g.addDice(g)
@@ -161,6 +164,46 @@ class Game {
     }
   }
 
+
+  // player winner
+  win = function (g, p1, p2) {
+
+    if (g.globalScore1 >= 100) {
+      g.playerWinner = p1.speudo1;
+      g.textWinner.innerText = `${g.playerWinner} has won this part!`
+      jQuery('#playerWinner').modal('show');
+      winGame.playSound();
+
+      setTimeout(() => {
+        g.setRemoveBtn(g)
+
+      }, 1000)
+
+
+
+      console.log(newGame.globalScore1)
+      console.log(g.playerWinner)
+
+
+    } else if (g.globalScore2 >= 100) {
+
+      g.playerWinner = p2.speudo2;
+      g.textWinner.innerText = `${g.playerWinner} has won this part!`
+
+      jQuery('#playerWinner').modal('show');
+      winGame.playSound();
+      
+
+      setTimeout(() => {
+        g.setRemoveBtn(g)
+
+      }, 1000)
+      console.log(newGame.globalScore2)
+    }
+
+  }
+
+
   // stop the spam btn
   setDebounce = function (callback, delay) {
     var timer;
@@ -172,6 +215,11 @@ class Game {
         callback.apply(context, args);
       }, delay)
     }
+  }
+
+  setRemoveBtn = function (g) {
+    g.btnRollDice.classList.add('is-btn-hidden');
+    g.btnHold.classList.add('is-btn-hidden');
   }
 
   // btn append
@@ -190,16 +238,19 @@ class Game {
     g.dice.classList.remove('is-btn-hidden');
   }
 
+
+
 }
 
 class PlayerOne {
 
   constructor() {
-    this.speudo1 = document.getElementById('player__one--name');
+    this.backgroundPlayerOne = document.getElementById('player__one');
+    this.displaySpeudo1 = document.getElementById('player__one--name');
+    this.inputName1 = document.getElementById('name1');
+    this.speudo1 = undefined;
     this.score1Text = document.getElementById('player__one--score');
     this.currentScore1 = document.getElementById('player__one--currentScore');
-    this.enterName1 = document.getElementById('name1')
-    this.backgroundPlayerOne = document.getElementById('player__one');
 
   }
 
@@ -215,16 +266,20 @@ class PlayerOne {
     this.currentScore1
   }
 
+
   // reset score
   setResetPlayerOne = function (p1) {
-    p1.speudo1.innerHTML = "Player 1";
+    p1.displaySpeudo1.innerHTML = "Player 1";
     p1.score1Text.innerHTML = 0;
     p1.currentScore1.innerHTML = 0
+    p1.backgroundPlayerOne.classList.add('is-turn-player-active')
   }
 
   // modified spedo
   setSpeudo1 = function () {
-    this.speudo1.innerHTML = this.enterName1.value;
+    this.displaySpeudo1.innerHTML = this.inputName1.value;
+    this.speudo1 = this.inputName1.value;
+
   }
 
 
@@ -248,10 +303,11 @@ class PlayerTwo {
 
   constructor() {
 
-    this.speudo2 = document.getElementById('player__two--name');
+    this.displaySpeudo2 = document.getElementById('player__two--name');
+    this.inputName2 = document.getElementById('name2');
+    this.speudo2 = undefined;
     this.score2Text = document.getElementById('player__two--score');
     this.currentScore2 = document.getElementById('player__two--currentScore');
-    this.enterName2 = document.getElementById('name2');
     this.backgroundPlayerTwo = document.getElementById('player__two');
 
   }
@@ -269,15 +325,17 @@ class PlayerTwo {
   }
 
   setResetPlayerTwo = function (p2) {
-    p2.speudo2.innerHTML = "Player 2";
+    p2.displaySpeudo2.innerHTML = "Player 2";
     p2.score2Text.innerHTML = 0;
     p2.currentScore2.innerHTML = 0;
+    p2.backgroundPlayerTwo.classList.add('is-turn-player-active')
 
   }
 
 
   setSpeudo2 = function () {
-    this.speudo2.innerHTML = this.enterName2.value;
+    this.displaySpeudo2.innerHTML = this.inputName2.value;
+    this.speudo2 = this.inputName2.value;
   }
 
 
@@ -303,6 +361,7 @@ class Soundgame {
 
     // create document html audio
     this.sound = document.createElement("audio");
+
     // add src
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
@@ -329,21 +388,24 @@ class Forms {
 
     this.btnplayer1 = document.getElementById('next1');
     this.btnplayer2 = document.getElementById("next2");
+    this.displayModalWinner = document.getElementById('displayPlayerWinner');
     this.inputName1 = document.getElementById("name1");
     this.inputName2 = document.getElementById("name2");
 
   }
 
-  setEnterClick= function (f) {
+  setFakeClickPlayer1 = function (f) {
 
     f.btnplayer1.click();
-    
 
   }
 
-  // setFocusInput = () => {
-  //   this.inputName1.value.
-  // }
+  setEnterClickStartGame = function (f) {
+
+    f.btnplayer2.click();
+
+  }
+
 
 }
 
