@@ -8,8 +8,8 @@ class Game {
     this.faceDiceRandom = document.getElementById('face__one')
     this.currentTurn = undefined;
     this.currentScore = 0;
-    this.globalScore1 = 99;
-    this.globalScore2 = 99;
+    this.globalScore1 = 0;
+    this.globalScore2 = 0;
     this.playerWinner = undefined;
     this.textWinner = document.getElementById('textWinner');
     this.displayModalWinner = document.getElementById('displayPlayerWinner');
@@ -24,8 +24,10 @@ class Game {
     g.globalScore1 = 0;
     g.globalScore2 = 0;
     g.playerWinner = undefined;
+    g.setBtnHidden(g)
     p1.setResetPlayerOne(p1)
     p2.setResetPlayerTwo(p2)
+
   }
 
   // turn the Dice for the player one or two
@@ -192,7 +194,7 @@ class Game {
 
       jQuery('#playerWinner').modal('show');
       winGame.playSound();
-      
+
 
       setTimeout(() => {
         g.setRemoveBtn(g)
@@ -226,6 +228,12 @@ class Game {
   setBtnAppend = function (g) {
     g.btnRollDice.classList.remove('is-btn-hidden');
     g.btnHold.classList.remove('is-btn-hidden');
+  }
+
+  // setBtnHidden
+  setBtnHidden = function (g) {
+    g.btnRollDice.classList.add('is-btn-hidden');
+    g.btnHold.classList.add('is-btn-hidden');
   }
 
   // remove dice

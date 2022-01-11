@@ -5,16 +5,15 @@
 // ----------------------
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
 
-$lato : 'lato';
-$colorFrame : rgb(28, 34, 116);
-$colorBgPlayerWinner : rgba(109, 194, 243, 0.781);
-$textWinner : gold ;
-$is-turn-player-active :  rgb(109, 194, 243);
-$is-turn-player-off : rgb(5, 5, 75);
-
+$lato: "lato";
+$colorFrame: rgb(28, 34, 116);
+$colorBgPlayerWinner: rgba(109, 194, 243, 0.781);
+$textWinner: gold;
+$is-turn-player-active: rgb(109, 194, 243);
+$is-turn-player-off: rgb(5, 5, 75);
 
 // size dice
 
-$size_dice : 75px;
+$size_dice: 75px;

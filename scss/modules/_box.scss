@@ -17,7 +17,6 @@
   margin-top: 10%;
   margin-bottom: 10%;
   min-height: 90vh;
-  max-height: 90vh;
   min-width: 95vw;
 
   // setup
@@ -95,23 +94,26 @@
 
 // modal playerWinner
 
-#playerWinner {
+.playerWinner {
   background-color: $colorBgPlayerWinner;
 
-  #playerWinner--header {
+  .playerWinner--header {
+    @extend .textGame;
     justify-content: center;
     background-color: $is-turn-player-off;
     border-bottom: none;
   }
 
-  #playerWinner--body {
+  .playerWinner--body {
+    @extend .textGame;
     text-align: center;
     color: $textWinner;
     text-decoration: double;
     background-color: $is-turn-player-off;
   }
 
-  #playerWinner--footer {
+  .playerWinner--footer {
+    @extend .textGame;
     border-top: none;
     background-color: $is-turn-player-off;
   }
