@@ -28,7 +28,7 @@ body,
 a,
 p {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -40,10 +40,7 @@ p {
   font-weight: bolder;
 }
 
-div.textGame > p,
-.playerWinner div.playerWinner--header > p,
-.playerWinner div.playerWinner--body > p,
-.playerWinner div.playerWinner--footer > p {
+div.textGame > p, .playerWinner div.playerWinner--header > p, .playerWinner div.playerWinner--body > p, .playerWinner div.playerWinner--footer > p {
   font-size: 1rem;
   font-weight: bolder;
 }
@@ -73,10 +70,7 @@ svg {
     font-size: 3rem;
     font-weight: bolder;
   }
-  div.textGame > p,
-  .playerWinner div.playerWinner--header > p,
-  .playerWinner div.playerWinner--body > p,
-  .playerWinner div.playerWinner--footer > p {
+  div.textGame > p, .playerWinner div.playerWinner--header > p, .playerWinner div.playerWinner--body > p, .playerWinner div.playerWinner--footer > p {
     font-size: 2rem;
     font-weight: bolder;
   }
@@ -107,34 +101,31 @@ svg {
 
 @media screen and (min-width: 1700px) {
   .texteModaleTitle {
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     font-weight: bolder;
   }
-  div.textGame > p,
-  .playerWinner div.playerWinner--header > p,
-  .playerWinner div.playerWinner--body > p,
-  .playerWinner div.playerWinner--footer > p {
+  div.textGame > p, .playerWinner div.playerWinner--header > p, .playerWinner div.playerWinner--body > p, .playerWinner div.playerWinner--footer > p {
     font-size: 2.5rem;
     font-weight: bolder;
   }
   .textGame--btn {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   p {
-    font-size: 5rem;
+    font-size: 2rem;
   }
   img {
     width: 7rem;
   }
   svg {
-    width: 4rem;
+    width: 3rem;
   }
   #game--frame {
     border-color: #1c2274;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    min-height: 70vh !important;
-    min-width: 45vw !important;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    min-height: 90vh !important;
+    min-width: 60vw !important;
   }
   .textFooter {
     font-size: 3rem;
@@ -169,18 +160,16 @@ svg {
 
 #game--frame #container {
   -webkit-perspective: 1000px;
-  perspective: 1000px;
+          perspective: 1000px;
 }
 
-#game--frame .dice,
-#game--frame .is-roll-dice-player-one,
-#game--frame .is-roll-dice-player-two {
+#game--frame .dice, #game--frame .is-roll-dice-player-one, #game--frame .is-roll-dice-player-two {
   position: relative;
   -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+          transform-style: preserve-3d;
   max-height: 75px;
   -webkit-transform: rotateX(177deg) rotateY(202deg);
-  transform: rotateX(177deg) rotateY(202deg);
+          transform: rotateX(177deg) rotateY(202deg);
   top: -67px;
 }
 
@@ -191,7 +180,7 @@ svg {
 
 #game--frame #face__one {
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
   background-image: url("../image/dice-six-faces-one.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -199,9 +188,9 @@ svg {
 
 #game--frame #face__two {
   -webkit-transform-origin: top;
-  transform-origin: top;
+          transform-origin: top;
   -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
   background-image: url("../image/dice-six-faces-two.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -209,9 +198,9 @@ svg {
 
 #game--frame #face__five {
   -webkit-transform-origin: top;
-  transform-origin: top;
+          transform-origin: top;
   -webkit-transform: translate(0px, -150px) rotateX(-90deg);
-  transform: translate(0px, -150px) rotateX(-90deg);
+          transform: translate(0px, -150px) rotateX(-90deg);
   background-image: url("../image/dice-six-faces-five.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -219,11 +208,11 @@ svg {
 
 #game--frame #face__three {
   -webkit-transform-origin: left;
-  transform-origin: left;
+          transform-origin: left;
   -webkit-transform: rotateY(90deg);
-  transform: rotateY(90deg);
+          transform: rotateY(90deg);
   -webkit-transform: translate(0px, -225px) rotateY(90deg);
-  transform: translate(0px, -225px) rotateY(90deg);
+          transform: translate(0px, -225px) rotateY(90deg);
   background-image: url("../image/dice-six-faces-three.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -231,11 +220,11 @@ svg {
 
 #game--frame #face__four {
   -webkit-transform-origin: right;
-  transform-origin: right;
+          transform-origin: right;
   -webkit-transform: rotateY(90deg);
-  transform: rotateY(90deg);
+          transform: rotateY(90deg);
   -webkit-transform: translate(0px, -300px) rotateY(-90deg);
-  transform: translate(0px, -300px) rotateY(-90deg);
+          transform: translate(0px, -300px) rotateY(-90deg);
   background-image: url("../image/dice-six-faces-four.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -243,11 +232,11 @@ svg {
 
 #game--frame #face__six {
   -webkit-transform-origin: top;
-  transform-origin: top;
+          transform-origin: top;
   -webkit-transform: rotateY(90deg);
-  transform: rotateY(90deg);
+          transform: rotateY(90deg);
   -webkit-transform: translate(0px, -375px) translateZ(-75px);
-  transform: translate(0px, -375px) translateZ(-75px);
+          transform: translate(0px, -375px) translateZ(-75px);
   background-image: url("../image/dice-six-faces-six.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -259,8 +248,8 @@ svg {
 
 .playerWinner .playerWinner--header {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #05054b;
   border-bottom: none;
 }
@@ -269,7 +258,7 @@ svg {
   text-align: center;
   color: gold;
   -webkit-text-decoration: double;
-  text-decoration: double;
+          text-decoration: double;
   background-color: #05054b;
 }
 
@@ -287,103 +276,103 @@ svg {
 
 .is-roll-dice-player-one {
   -webkit-animation: rollDiceplayerOne 1s;
-  animation: rollDiceplayerOne 1s;
+          animation: rollDiceplayerOne 1s;
 }
 
 .is-roll-dice-player-two {
   -webkit-animation: rollDiceplayertwo 1s;
-  animation: rollDiceplayertwo 1s;
+          animation: rollDiceplayertwo 1s;
 }
 
 @-webkit-keyframes rollDiceplayerOne {
   0% {
     -webkit-transform: rotateX(270deg);
-    transform: rotateX(270deg);
+            transform: rotateX(270deg);
     left: -900px;
     top: 200px;
     -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
+            transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateX(358deg);
-    transform: rotateX(358deg);
+            transform: rotateX(358deg);
     left: 0px;
     top: -50px;
     -webkit-transform: rotateZ(358deg);
-    transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
-    transform: rotateY(358deg);
+            transform: rotateY(358deg);
   }
 }
 
 @keyframes rollDiceplayerOne {
   0% {
     -webkit-transform: rotateX(270deg);
-    transform: rotateX(270deg);
+            transform: rotateX(270deg);
     left: -900px;
     top: 200px;
     -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
+            transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateX(358deg);
-    transform: rotateX(358deg);
+            transform: rotateX(358deg);
     left: 0px;
     top: -50px;
     -webkit-transform: rotateZ(358deg);
-    transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
-    transform: rotateY(358deg);
+            transform: rotateY(358deg);
   }
 }
 
 @-webkit-keyframes rollDiceplayertwo {
   0% {
     -webkit-transform: rotateX(270deg);
-    transform: rotateX(270deg);
+            transform: rotateX(270deg);
     right: -900px;
     top: 150px;
     -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
+            transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateX(358deg);
-    transform: rotateX(358deg);
+            transform: rotateX(358deg);
     right: 0px;
     top: -50px;
     -webkit-transform: rotateZ(358deg);
-    transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
-    transform: rotateY(358deg);
+            transform: rotateY(358deg);
   }
 }
 
 @keyframes rollDiceplayertwo {
   0% {
     -webkit-transform: rotateX(270deg);
-    transform: rotateX(270deg);
+            transform: rotateX(270deg);
     right: -900px;
     top: 150px;
     -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
+            transform: rotateY(0deg);
     -webkit-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
   }
   100% {
     -webkit-transform: rotateX(358deg);
-    transform: rotateX(358deg);
+            transform: rotateX(358deg);
     right: 0px;
     top: -50px;
     -webkit-transform: rotateZ(358deg);
-    transform: rotateZ(358deg);
+            transform: rotateZ(358deg);
     -webkit-transform: rotateY(358deg);
-    transform: rotateY(358deg);
+            transform: rotateY(358deg);
   }
 }
 

@@ -91,7 +91,7 @@ svg {
 // screen 1700px
 @media screen and (min-width: 1700px) {
   .texteModaleTitle {
-    font-size: 4rem !important ;
+    font-size: 3rem !important ;
     font-weight: bolder;
   }
 
@@ -101,11 +101,11 @@ svg {
   }
 
   .textGame--btn {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   p {
-    font-size: 5rem;
+    font-size: 2rem;
   }
 
   img {
@@ -113,15 +113,15 @@ svg {
   }
 
   svg {
-    width: 4rem;
+    width: 3rem;
   }
 
   #game--frame {
     border-color: $colorFrame;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    min-height: 70vh !important;
-    min-width: 45vw !important;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    min-height: 90vh !important;
+    min-width: 60vw !important;
   }
 
   .textFooter {
